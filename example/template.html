@@ -1,0 +1,17 @@
+<html>
+	<title>example</title>
+	<body>
+		<h1>Hello {{? worlds=2}}Everything!{{?:world==true}}{{world}}{{?:}}momma{{/?}}</h1>
+		{{> example}}
+			<ul>
+			{{# p,i in people}}
+				<li class="person-{{i+1}} person-{{? i=people.length-1}}last{{?: i=0}}first{{?:}}middle{{/?}}">hello {{p}}</li>
+			{{/#}}\n
+			</ul>
+		{{/>}}
+	<p>{{- var n = ['a','b']}} Here is some raw javascript: {{n}}</p>
+	<div style="background:#ccc">
+		<p>this was rendered before and is output here:</p>
+		{{>> example}}
+	</div>
+	</body>
